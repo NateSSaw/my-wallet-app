@@ -60,7 +60,7 @@ export default function App() {
           accounts[0].substring(accounts[0].length - 4)
       );
     } else {
-      console.error("Ошибка подключения учетной записи:");
+      console.error("Error connection to user account");
     }
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -72,7 +72,7 @@ export default function App() {
 
   return (
     <div>
-      <div className={css.container}>
+      <header className={css.container}>
         <img src={Logo} alt="Logo app" width={120} height={120} />
         {userAccount ? (
           <div className={css.btn__connect}>
@@ -84,7 +84,7 @@ export default function App() {
             Connect wallet
           </button>
         )}
-      </div>
+      </header>
 
       <Form userAccount={userAccount} />
     </div>

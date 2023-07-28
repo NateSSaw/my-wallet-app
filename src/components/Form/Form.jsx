@@ -49,10 +49,11 @@ export default function Form({ userAccount }) {
         console.error("Error sending transaction:", error);
         setIsPreloader(false);
       }
+    } else {
+      return Notiflix.Notify.failure(
+        "Please check  the correctness of the entered data and try again"
+      );
     }
-    return Notiflix.Notify.failure(
-      "Please check  the correctness of the entered data and try again"
-    );
   }
 
   return (
